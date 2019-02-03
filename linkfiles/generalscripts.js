@@ -31,6 +31,16 @@ function createMap() {
   }
 }
 
+
+function responsiveNavbar() {
+   var x = document.getElementById("myNavbar");
+   if (x.className === "navbar") {
+   x.className += " responsive";
+   } else {
+    x.className = "navbar";
+   }
+   }
+
 $(document).ready(function () {
   // JQuery Area
 
