@@ -5,9 +5,10 @@ window.onblur = function () {
 }
 
 var map;
+var initZoom = 13;
+var clickZoom = 18;
 
 function createMap() {
-
   var markers = new Array(
     new Array("Edinburgh", 55.953, -3.1883),
     new Array("Heriot Watt", 55.9097, -3.3203),
@@ -17,29 +18,44 @@ function createMap() {
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 55.953, lng: -3.1883 },
-    zoom: 12
+    zoom: initZoom
   });
 
-  var pos = new google.maps.LatLng(55.9533, -3.1883);
-
   for (var i = 0; i < markers.length; i++) {
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(markers[i][1], markers[i][2]),
-      map: map,
-      title: markers[i][0]
-    })
+    var name, lat, lng;
+    name = markers[i][0];
+    lat = markers[i][1];
+    lng = markers[i][2];
+    addMarker(name, lat, lng);
   }
 }
 
+function addMarker(name, lat, lng) {
+  marker = new google.maps.Marker({
+    position: { lat: lat, lng: lng },
+    map: map,
+    title: name
+  })
+
+  zoomToMarker(marker);
+  return marker;
+}
+
+function zoomToMarker(marker) {
+  marker.addListener('click', function () {
+    map.setZoom(clickZoom);
+    map.panTo(marker.getPosition());
+  })
+}
 
 function responsiveNavbar() {
-   var x = document.getElementById("myNavbar");
-   if (x.className === "navbar") {
-   x.className += " responsive";
-   } else {
+  var x = document.getElementById("myNavbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
     x.className = "navbar";
-   }
-   }
+  }
+}
 
 $(document).ready(function () {
   // JQuery Area
