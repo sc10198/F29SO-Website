@@ -56,7 +56,7 @@ function responsiveNavbar() {
    } else {
     x.className = "navbar";
    }
-   }
+}
 
 $(document).ready(function () {
   // JQuery Area
