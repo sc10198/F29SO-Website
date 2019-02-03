@@ -2,9 +2,9 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="linkfiles/generalstyle.css">
+  <link rel="stylesheet" type="text/css" href="linkfiles/mapIndex.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="linkfiles/generalscripts.js"></script>
 
   <title> Tyrnakine </title>
 </head>
@@ -13,10 +13,18 @@
 
   <div id="background">
     <div id="maindiv">
-    
+      <div id="map">
+
+      </div>
+
+
     </div>
   </div>
 
+
+  <script src="linkfiles/generalscripts.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA8yJzHM3oqcPzjqEisLsP4GSkevvJk9s&callback=createMap">
+  </script>
 </body>
 
 </html>
