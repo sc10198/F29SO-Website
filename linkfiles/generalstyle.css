@@ -15,9 +15,7 @@ body, html {
   height: 100%;
   max-width: 100%;
   max-height: 100%;
-  background-image: url("../resources/scotland-859332.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("../resources/lghtmesh.png");
 }
 
 #maindiv {
@@ -29,6 +27,48 @@ body, html {
   background-color: var(--bcolor);
 }
 
+*{
+font-family: 'Roboto', sans-serif;
+}
+
+.navbar .icon {
+    display: none;
+}
+
+.navbar{
+	list-style-type: none;
+    top:-17px;
+    padding: 0px;
+	z-index:1000;
+	width:100%;
+	position:fixed;
+	 background-color: #373730;
+}
+
+.navbar li {
+   display:inline-block;
+}
+
+.navbar li a {
+    display:inline-block;
+    color: #BDBDBD;
+    text-align: left;
+    padding: 14px 11px;
+    text-decoration: none;
+	font-size:22px;
+	font-family: 'Ropa Sans', sans-serif;
+}
+
+
+#active:hover,.navbar li a:hover{
+     color: #696750;
+}
+
+#active{
+   color: #838165;
+}
+
+/*
 :root {
   --bcolor: rgba(0, 0, 255, 0.25);
-}
+}*/
