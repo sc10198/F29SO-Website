@@ -1,7 +1,15 @@
 window.onblur = function () {
   window.onfocus = function () {
-    location.reload(true)
+    //location.reload(true)
   }
+}
+
+function nullFunction() {
+
+}
+
+function throwAlert(msg) {
+  alert(msg);
 }
 
 var map;
@@ -31,10 +39,12 @@ function createMap() {
 }
 
 function addMarker(name, lat, lng) {
+  var bicon = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
   marker = new google.maps.Marker({
     position: { lat: lat, lng: lng },
     map: map,
-    title: name
+    title: name,
+    icon: bicon
   })
 
   zoomToMarker(marker);
